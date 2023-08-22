@@ -11,15 +11,15 @@ USE db_Rh;
 2 - Crie uma tabela de colaboradores e determine 5 atributos relevantes dos colaboradores para se trabalhar com o serviço deste RH.
 */
 CREATE TABLE IF NOT EXISTS tb_Usuarios(
-	id_usuario BIGINT NOT NULL AUTO_INCREMENT,	
-	nome VARCHAR(255) NOT NULL, 
-	sobrenome VARCHAR(255) NOT NULL,
-	setor VARCHAR(255) NOT NULL,
-	telefone VARCHAR(20) NOT NULL,
-	salario DECIMAL(10,2),
-	sexo ENUM('f' ,'m','n') NOT NULL DEFAULT 'n',
-	ativo ENUM ('s','n') NOT NULL DEFAULT 'n',
-	PRIMARY KEY(id_usuario)
+    id_usuario BIGINT NOT NULL AUTO_INCREMENT,	
+    nome VARCHAR(255) NOT NULL, 
+    sobrenome VARCHAR(255) NOT NULL,
+    setor VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    salario DECIMAL(10,2),
+    sexo ENUM('f' ,'m','n') NOT NULL DEFAULT 'n',
+    ativo ENUM ('s','n') NOT NULL DEFAULT 'n',
+    PRIMARY KEY(id_usuario)
  );
 
 SHOW TABLES;
