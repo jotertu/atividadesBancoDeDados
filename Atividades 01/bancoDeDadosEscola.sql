@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS tb_Alunos (
     sexo ENUM('f', 'm', 'n') NOT NULL DEFAULT 'n',
     telefone VARCHAR(255) NOT NULL,
     endereco VARCHAR(255) NOT NULL,
-    nota DECIMAL(3, 1) NOT NULL, -- Ajustado para permitir até 999.9
+    nota DECIMAL(2, 1) NOT NULL,
     periodoaula ENUM('m', 't', 'n') NOT NULL DEFAULT 'n',
     frequencia ENUM('0', '1') NOT NULL DEFAULT '1',
     PRIMARY KEY (id_aluno)
