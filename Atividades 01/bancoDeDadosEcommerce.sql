@@ -6,6 +6,7 @@ DROP DATABASE IF EXISTS db_ecommerce;
 CREATE DATABASE IF NOT EXISTS db_ecommerce;
 
 USE db_ecommerce;
+
 /*
 2 - Crie uma tabela de produtos e determine 5 atributos relevantes dos produtos para se trabalhar com o serviço deste e-commerce.
 */
@@ -28,8 +29,6 @@ DESCRIBE tb_Produtos;
 /*
 3 - Insira nesta tabela no mínimo 8 dados (registros).
 */
-
-
 INSERT INTO tb_Produtos (
     nome,
     descricao,
