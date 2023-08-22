@@ -1,9 +1,15 @@
 DROP DATABASE IF EXISTS db_Rh;
 
+/*
+1 - Crie um banco de dados para um serviço de RH de uma empresa, onde o sistema trabalhará com as informações dos colaboradores desta empresa. 
+*/
 CREATE DATABASE IF NOT EXISTS db_Rh;
 
 USE db_Rh;
 
+/*
+2 - Crie uma tabela de colaboradores e determine 5 atributos relevantes dos colaboradores para se trabalhar com o serviço deste RH.
+*/
 CREATE TABLE IF NOT EXISTS tb_Usuarios(
 	id_usuario BIGINT NOT NULL AUTO_INCREMENT,	
 	nome VARCHAR(255) NOT NULL, 
@@ -20,6 +26,9 @@ SHOW TABLES;
 
 DESCRIBE tb_Usuarios;
 
+/*
+3 - Insira nesta tabela no mínimo 5 dados (registros).
+*/
 INSERT INTO tb_Usuarios (
     nome,
     sobrenome,
@@ -110,10 +119,19 @@ INSERT INTO tb_Usuarios (
     's'
 );
 
+/*
+4 - Faça um SELECT que retorne todes os colaboradores com o salário maior do que 2000.
+*/
 SELECT * FROM tb_Usuarios WHERE salario > 2000.00;
 
+/*
+5 - Faça um SELECT que retorne todes os colaboradores com o salário menor do que 2000.
+*/
 SELECT * FROM tb_Usuarios WHERE salario < 2000.00;
 
+/*
+6 - Ao término atualize um registro desta tabela através de uma query de atualização.
+*/
 UPDATE tb_Usuarios SET salario = 2380.00 WHERE id_usuario = 4; 
 
 SELECT * FROM tb_Usuarios;

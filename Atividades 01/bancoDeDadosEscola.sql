@@ -1,109 +1,148 @@
-DROP DATABASE IF EXISTS db_ecommerce;
+DROP DATABASE IF EXISTS db_Escola;
 
-CREATE DATABASE IF NOT EXISTS db_ecommerce;
+CREATE DATABASE IF NOT EXISTS db_Escola;
 
-CREATE TABLE IF NOT EXISTS tb_Produtos(
-id_produto BIGINT NOT NULL AUTO_INCREMENT,
-nome VARCHAR(255) NOT NULL,
-descricao VARCHAR(255) NOT NULL,
-preco DECIMAL (10,2) NOT NULL,
-qtdestoque INT(255) NOT NULL, 
-categoria VARCHAR(255) NOT NULL, 
-fornecedor VARCHAR(255) NOT NULL,
-datacadastro DATETIME,
-PRIMARY KEY (id_produto)
+USE db_Escola;
+
+CREATE TABLE IF NOT EXISTS tb_Alunos (
+    id_aluno BIGINT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    nascimento DATE NOT NULL,
+    email VARCHAR(255),
+    turma VARCHAR(4),
+    sexo ENUM('f', 'm', 'n') NOT NULL DEFAULT 'n',
+    telefone VARCHAR(255) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    nota DECIMAL(3, 1) NOT NULL, -- Ajustado para permitir até 999.9
+    periodoaula ENUM('m', 't', 'n') NOT NULL DEFAULT 'n',
+    frequencia ENUM('0', '1') NOT NULL DEFAULT '1',
+    PRIMARY KEY (id_aluno)
 );
+
 
 SHOW TABLES;
 
-DESCRIBE tb_Produtos;
-
-INSERT INTO tb_Produtos (
+INSERT INTO tb_Alunos (
     nome,
-    descricao,
-    preco,
-    qtdestoque,
-    categoria,
-    fornecedor
+    email,
+    nascimento,
+    sexo,
+    endereco,
+    telefone,
+    nota,
+    turma,
+    frequencia
+
 ) VALUES (
-    'Smartphone Modelo X',
-    'Um smartphone avançado com recursos de última geração.',
-    899.99,
-    50,
-    'Eletrônicos',
-    'TechCorp'
+      'Raimundo Nonato',
+      'raimundo.nonato@gmail.com',
+      '1990-04-23',
+      'm',
+      'Avenida Ramiro Colleoni, 110 - Vila Dora - Santo André - SP',
+      '(11)4235-3659',
+      8.2,
+      't2',
+      '1'
 );
 
-INSERT INTO tb_Produtos (
+INSERT INTO tb_Alunos (
     nome,
-    descricao,
-    preco,
-    qtdestoque,
-    categoria,
-    fornecedor
+    email,
+    nascimento,
+    sexo,
+    endereco,
+    telefone,
+    nota,
+    turma,
+    frequencia
+
 ) VALUES (
-    'Camiseta Estampada',
-    'Camiseta de algodão com estampa moderna.',
-    25.99,
-    100,
-    'Vestuário',
-    'FashionStyle'
+      'Caleb Leonardo Figueiredo',
+      'caleb.leonardo.figueiredo@fclar.net.br',
+      '2005-07-01',
+      'm',
+      'Rodovia Amaral Peixoto 538 Loja 2, 872 - Guanabara - RJ',
+      '(22)3584-6739',
+      8.2,
+      't2',
+      '1'
 );
 
-INSERT INTO tb_Produtos (
+INSERT INTO tb_Alunos (
     nome,
-    descricao,
-    preco,
-    qtdestoque,
-    categoria,
-    fornecedor
+    email,
+    nascimento,
+    sexo,
+    endereco,
+    telefone,
+    nota,
+    turma,
+    frequencia
+
 ) VALUES (
-    'Mochila Esportiva',
-    'Mochila resistente e confortável para atividades ao ar livre.',
-    49.50,
-    30,
-    'Acessórios',
-    'OutdoorGear'
+      'Fábio Matheus Castro',
+      'rfabio-castro97@inovasom.com',
+      '1996-08-10',
+      'm',
+      'Passagem Nossa Senhora do Carmo, 387- Ananindeua - PA',
+      '(91)2597-9759',
+      2.0,
+      't2',
+      '1'
 );
 
-INSERT INTO tb_Produtos (
+INSERT INTO tb_Alunos (
     nome,
-    descricao,
-    preco,
-    qtdestoque,
-    categoria,
-    fornecedor
+    email,
+    nascimento,
+    sexo,
+    endereco,
+    telefone,
+    nota,
+    turma,
+    frequencia
+
 ) VALUES (
-    'Tablet Infantil',
-    'Tablet educativo para crianças com jogos interativos.',
-    149.99,
-    20,
-    'Brinquedos',
-    'KidsTech'
+      'Tiago Pietro Corte Real',
+      'tiago_cortereal@sigtechbr.com',
+      '2005-07-15',
+      'm',
+      'Av. Getulio Vargas, 454 - SÃO PAULO - SP ',
+      '(11)3432-3349',
+      6.2,
+      't2',
+      '1'
 );
 
-INSERT INTO tb_Produtos (
+INSERT INTO tb_Alunos (
     nome,
-    descricao,
-    preco,
-    qtdestoque,
-    categoria,
-    fornecedor
+    email,
+    nascimento,
+    sexo,
+    endereco,
+    telefone,
+    nota,
+    turma,
+    frequencia
+
 ) VALUES (
-    'Panela Elétrica Multiuso',
-    'Panela elétrica versátil para cozinhar diversos pratos.',
-    89.00,
-    15,
-    'Eletrodomésticos',
-    'HomeApplianceCo'
+      'Fernanda Luciana Figueiredo',
+      'fernanda.luciana.figueiredo@vivax.com',
+      '1998-01-25',
+      'f',
+      'Vila Frota Neto, 744 - São João do Tauape - Fortaleza - CE',
+      '(85)9869-3131',
+      10.0,
+      't2',
+      '1'
 );
 
-SELECT * FROM tb_Produtos;
+SELECT * FROM tb_Alunos;
 
-SELECT * FROM tb_Produtos WHERE valor > 500.0;
+SELECT * FROM tb_Usuarios WHERE nota > 7.0;
 
-SELECT * FROM tb_Produtos WHERE valor < 500.0;
+SELECT * FROM tb_Usuarios WHERE nota < 7.0;
 
-UPDATE tb_Produtos SET nome = 'Mochila Esportiva 2', qtdestoque = 10 WHERE id_produto = 3;
+UPDATE tb_Alunos SET nome = 'Tiago Pietro Corte Real Fernando', nota = 5.4 WHERE id_Aluno = 4; 
 
 SELECT * FROM tb_Alunos;

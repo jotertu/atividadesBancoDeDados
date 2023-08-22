@@ -1,9 +1,14 @@
 DROP DATABASE IF EXISTS db_ecommerce;
 
+/*
+1 - Crie um banco de dados para um e-commerce, onde o sistema trabalhará com as informações dos produtos deste e-commerce.
+*/
 CREATE DATABASE IF NOT EXISTS db_ecommerce;
 
 USE db_ecommerce;
-
+/*
+2 - Crie uma tabela de produtos e determine 5 atributos relevantes dos produtos para se trabalhar com o serviço deste e-commerce.
+*/
 CREATE TABLE IF NOT EXISTS tb_Produtos(
 id_produto BIGINT NOT NULL AUTO_INCREMENT,
 nome VARCHAR(255) NOT NULL,
@@ -19,6 +24,11 @@ PRIMARY KEY (id_produto)
 SHOW TABLES;
 
 DESCRIBE tb_Produtos;
+
+/*
+3 - Insira nesta tabela no mínimo 8 dados (registros).
+*/
+
 
 INSERT INTO tb_Produtos (
     nome,
@@ -100,12 +110,71 @@ INSERT INTO tb_Produtos (
     'HomeApplianceCo'
 );
 
+INSERT INTO tb_Produtos (
+    nome,
+    descricao,
+    preco,
+    qtdestoque,
+    categoria,
+    fornecedor
+) VALUES (
+    'Liquidificador Profissional',
+    'Liquidificador potente para preparar smoothies e bebidas.',
+    129.99,
+    10,
+    'Eletrodomésticos',
+    'KitchenTech'
+);
+
+INSERT INTO tb_Produtos (
+    nome,
+    descricao,
+    preco,
+    qtdestoque,
+    categoria,
+    fornecedor
+) VALUES (
+    'Fone de Ouvido Bluetooth',
+    'Fone de ouvido sem fio com qualidade de som excepcional.',
+    59.90,
+    25,
+    'Eletrônicos',
+    'AudioWave'
+);
+
+INSERT INTO tb_Produtos (
+    nome,
+    descricao,
+    preco,
+    qtdestoque,
+    categoria,
+    fornecedor
+) VALUES (
+    'Cadeira Ergonômica',
+    'Cadeira de escritório ergonômica para maior conforto durante o trabalho.',
+    199.00,
+    8,
+    'Móveis',
+    'ErgoDesign'
+);
+
+
 SELECT * FROM tb_Produtos;
 
+/*
+4 - Faça um SELECT que retorne todes os produtos com o valor maior do que 500.
+*/
 SELECT * FROM tb_Produtos WHERE preco > 500.0;
 
+/*
+5 - Faça um SELECT que retorne todes os produtos com o valor menor do que 500.
+
+*/
 SELECT * FROM tb_Produtos WHERE preco < 500.0;
 
+/*
+6  - Ao término atualize um registro desta tabela através de uma query de atualização.
+*/
 UPDATE tb_Produtos SET nome = 'Mochila Esportiva 2', qtdestoque = 10 WHERE id_produto = 3;
 
 SELECT * FROM tb_Alunos;
