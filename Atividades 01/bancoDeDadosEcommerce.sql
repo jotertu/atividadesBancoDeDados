@@ -11,14 +11,14 @@ USE db_ecommerce;
 2 - Crie uma tabela de produtos e determine 5 atributos relevantes dos produtos para se trabalhar com o serviço deste e-commerce.
 */
 CREATE TABLE IF NOT EXISTS tb_Produtos(
-id_produto BIGINT NOT NULL AUTO_INCREMENT,
-nome VARCHAR(255) NOT NULL,
-descricao VARCHAR(255) NOT NULL,
-preco DECIMAL (10,2) NOT NULL,
-qtdestoque INT(255) NOT NULL, 
-categoria VARCHAR(255) NOT NULL, 
-fornecedor VARCHAR(255) NOT NULL,
-datacadastro DATETIME,
+    id_produto BIGINT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
+    preco DECIMAL (10,2) NOT NULL,
+    qtdestoque INT(255) NOT NULL, 
+    categoria VARCHAR(255) NOT NULL, 
+    fornecedor VARCHAR(255) NOT NULL,
+    datacadastro DATETIME,
 PRIMARY KEY (id_produto)
 );
 
